@@ -1,5 +1,4 @@
 function plotAssemblyTable(json) {
-    console.log(json);
     var splitContigs = json.hasOwnProperty('Median split contig size');
     var parent = d3.select('#assembly-table');
     var table = parent.append('table');

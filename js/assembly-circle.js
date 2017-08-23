@@ -532,27 +532,27 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     var txt = lctg.append('text')
       .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 70) + ')')
       .attr('class', 'asm-bl_title');
-    txt.append('tspan').text('Contig statistics');
+    // txt.append('tspan').text('Contig statistics');
 
-    var key = lctg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 62) + ')');
-    key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-contig_count asm-toggle');
+    // var key = lctg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 62) + ')');
+    // key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-contig_count asm-toggle');
     var count_txt = key.append('text').attr('x', w + 2).attr('y', w - 1).attr('class', 'asm-key')
-    count_txt.append('tspan').text('Log')
-    count_txt.append('tspan').attr('baseline-shift', 'sub').attr('font-size', '75%').text(10)
-    count_txt.append('tspan').text(' contig count (total ' + this.contig_count.toLocaleString() + ')');
-    key.append('rect').attr('y', w * 1.5).attr('height', w).attr('width', w).attr('class', 'asm-contig asm-toggle');
-    key.append('text').attr('x', w + 3).attr('y', w * 2.5 - 1).text('Contig length').attr('class', 'asm-key');
+    // count_txt.append('tspan').text('Log')
+    // count_txt.append('tspan').attr('baseline-shift', 'sub').attr('font-size', '75%').text(10)
+    // count_txt.append('tspan').text(' contig count (total ' + this.contig_count.toLocaleString() + ')');
+    // key.append('rect').attr('y', w * 1.5).attr('height', w).attr('width', w).attr('class', 'asm-contig asm-toggle');
+    // key.append('text').attr('x', w + 3).attr('y', w * 2.5 - 1).text('Contig length').attr('class', 'asm-key');
   }
 
   // add adjustable scale legend
   var lscl = lg.append('g')
     .attr("id", "asm-g-scale_legend");
   var txt = lscl.append('text')
-    .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 150) + ')')
+    .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 150 + 60) + ')')
     .attr('class', 'asm-bl_title');
   txt.append('tspan').text('Scale');
 
-  var key = lscl.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 142) + ')');
+  var key = lscl.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 142 + 60) + ')');
   var circ_key = key.append('g').attr('width', '100px').attr('height', '14px').attr('transform', 'translate(0,8)').attr('id', 'asm-circ_scale_g');
   var circ_scale_rect = circ_key.append('rect').attr('x', w + 5).attr('y', -3).attr('width', '80px').attr('height', '18px').attr('class', 'asm-scale_rect');
   circ_key.append('circle').attr('cx', w / 2).attr('cy', w / 2).attr('r', w / 2).attr('class', 'asm-axis');
@@ -988,7 +988,7 @@ function toInt(number) {
 function getReadableSeqSizeString(seqSizeInBases, fixed) {
   // function based on answer at http://stackoverflow.com/questions/10420352/converting-file-size-in-bytes-to-human-readable
   var i = -1;
-  var baseUnits = [' kB', ' MB', ' GB', ' TB'];
+  var baseUnits = [' k nt', ' M nt', ' G nt', ' T nt'];
   do {
     seqSizeInBases = seqSizeInBases / 1000;
     i++;
