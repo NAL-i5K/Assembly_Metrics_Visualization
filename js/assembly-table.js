@@ -1,6 +1,4 @@
-function plotAssemblyTable(file) {
-  d3.json(file, function(error, json) {
-    if (error) return console.warn(error);
+function plotAssemblyTable(json) {
     console.log(json);
     var splitContigs = json.hasOwnProperty('Median split contig size');
     var parent = d3.select('#assembly-table');
@@ -128,5 +126,4 @@ function plotAssemblyTable(file) {
     .enter()
     .append('td')
     .text(function(d) { return d });
-  });
 }
