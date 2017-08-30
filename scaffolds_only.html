@@ -12,7 +12,7 @@
       <div id="assembly-table"></div><br>
       <div id="assembly-circle"></div>
       <script type="text/javascript">
-        d3.json('example_scaffolds_only.json', function(error, json) {
+        d3.json('https://raw.githubusercontent.com/hsiaoyi0504/Assembly_Metrics_Toolkit/master/example_scaffolds_only.json', function(error, json) {
           if (error) return console.warn(error);
           plotAssemblyTable(json);
           asm = new Assembly (json);
