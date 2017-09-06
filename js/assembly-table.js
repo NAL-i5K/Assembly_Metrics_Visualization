@@ -16,11 +16,6 @@ function plotAssemblyTable(json) {
         'Number of sequences (>= 100k nt)':['Number of scaffolds (>= 100k nt)'],
         'Number of sequences (>= 1M nt)':['Number of scaffolds (>= 1M nt)'],
         'Number of sequences (>= 10M nt)':['Number of scaffolds (>= 1M nt)'],
-        'Total length of sequences (>= 1k nt)':['Total length of scaffolds (>= 1k nt)'],
-        'Total length of sequences (>= 10k nt)':['Total length of scaffolds (>= 10k nt)'],
-        'Total length of sequences (>= 100k nt)':['Total length of scaffolds (>= 100k nt)'],
-        'Total length of sequences (>= 1M nt)':['Total length of scaffolds (>= 1M nt)'],
-        'Total length of sequences (>= 10M nt)':['Total length of scaffolds (>= 10M nt)'],
         'Mean sequence size':['Mean scaffold size'],
         'Median sequeuce size':['Median scaffold size'],
         ' A (%)':['Scaffold A (%)'],
@@ -31,10 +26,7 @@ function plotAssemblyTable(json) {
         'Non-ACGTN (%)':['Scaffold non-ACGTN (%)'],
         'GC content of sequences (%)':['GC content of scaffolds (%)'],
         'N50 of sequences':['N50 of scaffolds'],
-        'N75 of sequences':['N75 of scaffolds'],
         'L50 of sequences':['L50 of scaffolds'],
-        'L75 of sequences':['L75 of scaffolds'],
-        'Number of N per 100k nt of sequences':['Number of N per 100k nt of scaffolds'],
       };
     } else {
       var columnNames = ['Property','Scaffolds','Contigs'];
@@ -48,11 +40,6 @@ function plotAssemblyTable(json) {
         'Number of sequences (>= 100k nt)':['Number of scaffolds (>= 100k nt)','Number of contigs (>= 100k nt)'],
         'Number of sequences (>= 1M nt)':['Number of scaffolds (>= 1M nt)','Number of contigs (>= 1M nt)'],
         'Number of sequences (>= 10M nt)':['Number of scaffolds (>= 1M nt)','Number of contigs (>= 10M nt)'],
-        'Total length of sequences (>= 1k nt)':['Total length of scaffolds (>= 1k nt)','Total length of contigs (>= 1k nt)'],
-        'Total length of sequences (>= 10k nt)':['Total length of scaffolds (>= 10k nt)','Total length of contigs (>= 10k nt)'],
-        'Total length of sequences (>= 100k nt)':['Total length of scaffolds (>= 100k nt)','Total length of contigs (>= 100k nt)'],
-        'Total length of sequences (>= 1M nt)':['Total length of scaffolds (>= 1M nt)','Total length of contigs (>= 1M nt)'],
-        'Total length of sequences (>= 10M nt)':['Total length of scaffolds (>= 10M nt)','Total length of contigs (>= 10M nt)'],
         'Mean sequence size':['Mean scaffold size','Mean contig size'],
         'Median sequeuce size':['Median scaffold size','Mean contig size'],
         ' A (%)':['Scaffold A (%)','Contig A (%)'],
@@ -63,10 +50,7 @@ function plotAssemblyTable(json) {
         'Non-ACGTN (%)':['Scaffold non-ACGTN (%)','Contig non-ACGTN (%)'],
         'GC content of sequences (%)':['GC content of scaffolds (%)','GC content of contigs (%)'],
         'N50 of sequences':['N50 of scaffolds','N50 of contigs'],
-        'N75 of sequences':['N75 of scaffolds','N75 of contigs'],
         'L50 of sequences':['L50 of scaffolds','L50 of contigs'],
-        'L75 of sequences':['L75 of scaffolds','L75 of contigs'],
-        'Number of N per 100k nt of sequences':['Number of N per 100k nt of scaffolds','Number of N per 100k nt of contigs'],
       };
     }
     var rowNames = [
@@ -79,11 +63,6 @@ function plotAssemblyTable(json) {
       'Number of sequences (>= 100k nt)',
       'Number of sequences (>= 1M nt)',
       'Number of sequences (>= 10M nt)',
-      'Total length of sequences (>= 1k nt)',
-      'Total length of sequences (>= 10k nt)',
-      'Total length of sequences (>= 100k nt)',
-      'Total length of sequences (>= 1M nt)',
-      'Total length of sequences (>= 10M nt)',
       'Mean sequence size',
       'Median sequeuce size',
       ' A (%)',
@@ -93,11 +72,6 @@ function plotAssemblyTable(json) {
       ' N (%)',
       'Non-ACGTN (%)',
       'GC content of sequences (%)',
-      'N50 of sequences',
-      'N75 of sequences',
-      'L50 of sequences',
-      'L75 of sequences',
-      'Number of N per 100k nt of sequences',
     ];
 
     thead.append('tr')
