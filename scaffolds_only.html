@@ -15,8 +15,11 @@
         d3.json('https://raw.githubusercontent.com/hsiaoyi0504/Assembly_Metrics_Toolkit/master/example_scaffolds_only.json', function(error, json) {
           if (error) return console.warn(error);
           plotAssemblyTable(json);
-          asm = new Assembly (json);
-          asm.drawPlot('assembly-circle');
+          var hasScaffolds = json.hasOwnProperty('Number of scaffolds');
+          if (hasScaffolds){
+            asm = new Assembly (json);
+            asm.drawPlot('assembly-circle');
+          }
         });
       </script>
   

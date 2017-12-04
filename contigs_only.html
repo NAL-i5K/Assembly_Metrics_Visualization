@@ -7,12 +7,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
       <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
       <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-      <script type="text/javascript" src="js/assembly-circle.js"></script>
       <script type="text/javascript" src="js/assembly-table.js"></script>
+      <script type="text/javascript" src="js/assembly-circle.js"></script>
       <div id="assembly-table"></div><br>
       <div id="assembly-circle"></div>
       <script type="text/javascript">
-        d3.json('https://raw.githubusercontent.com/hsiaoyi0504/Assembly_Metrics_Toolkit/master/example_scaffolds_and_contigs.json', function(error, json) {
+        d3.json('https://raw.githubusercontent.com/hsiaoyi0504/Assembly_Metrics_Toolkit/master/example_contigs_only.json', function(error, json) {
           if (error) return console.warn(error);
           plotAssemblyTable(json);
           var hasScaffolds = json.hasOwnProperty('Number of scaffolds');
@@ -22,5 +22,6 @@
           }
         });
       </script>
+  
     </body>
   </html>

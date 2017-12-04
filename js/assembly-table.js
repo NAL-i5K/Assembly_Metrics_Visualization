@@ -1,10 +1,35 @@
 function plotAssemblyTable(json) {
+    var hasScaffolds = json.hasOwnProperty('Number of scaffolds');
     var hasContigs = json.hasOwnProperty('Number of contigs');
     var parent = d3.select('#assembly-table');
     var table = parent.append('table');
     var thead = table.append('thead');
     var tbody = table.append('tbody');
-    if(!hasContigs) {
+    if (!hasScaffolds) {
+      var columnNames = ['Property', 'Contigs'];
+      var rowMap = {
+        'Total number of sequences': ['Number of contigs'],
+        'Total size of sequences': ['Total size of contigs'],
+        'Longest sequence': ['Longest contig'],
+        'Shortest sequqnce': ['Shortest contig'],
+        'Number of sequences (>= 1k nt)':['Number of contigs (>= 1k nt)'],
+        'Number of sequences (>= 10k nt)':['Number of contigs (>= 10k nt)'],
+        'Number of sequences (>= 100k nt)':['Number of contigs (>= 100k nt)'],
+        'Number of sequences (>= 1M nt)':['Number of contigs (>= 1M nt)'],
+        'Number of sequences (>= 10M nt)':['Number of contigs (>= 10M nt)'],
+        'Mean sequence size':['Mean contig size'],
+        'Median sequeuce size':['Mean contig size'],
+        ' A (%)':['Contig A (%)'],
+        ' C (%)':['Contig C (%)'],
+        ' G (%)':['Contig G (%)'],
+        ' T (%)':['Contig T (%)'],
+        ' N (%)':['Contig N (%)'],
+        'Non-ACGTN (%)':['Contig non-ACGTN (%)'],
+        'GC content of sequences (%)':['GC content of contigs (%)'],
+        'N50 of sequences':['N50 of contigs'],
+        'L50 of sequences':['L50 of contigs'],
+      };
+    } else if (!hasContigs) {
       var columnNames = ['Property','Scaffolds'];
       var rowMap = {
         'Total number of sequences': ['Number of scaffolds'],
@@ -31,7 +56,7 @@ function plotAssemblyTable(json) {
     } else {
       var columnNames = ['Property','Scaffolds','Contigs'];
       var rowMap = {
-        'Total number of sequences': ['Number of scaffolds','Number of contigs'],
+        'Total number of sequences': ['Number of scaffolds', 'Number of contigs'],
         'Total size of sequences': ['Total size of scaffolds','Total size of contigs'],
         'Longest sequence': ['Longest scaffold','Longest contig'],
         'Shortest sequqnce': ['Shortest scaffold','Shortest contig'],
