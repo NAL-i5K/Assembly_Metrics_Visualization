@@ -42,7 +42,7 @@ function plotAssemblyTable(json) {
         'Number of sequences (>= 1M nt)':['Number of scaffolds (>= 1M nt)'],
         'Number of sequences (>= 10M nt)':['Number of scaffolds (>= 1M nt)'],
         'Mean sequence size':['Mean scaffold size'],
-        'Median sequeuce size':['Median scaffold size'],
+        'Median sequence size':['Median scaffold size'],
         ' A (%)':['Scaffold A (%)'],
         ' C (%)':['Scaffold C (%)'],
         ' G (%)':['Scaffold G (%)'],
