@@ -12,7 +12,7 @@
       <div id="assembly-table"></div><br>
       <div id="assembly-circle"></div>
       <script type="text/javascript">
-        d3.json('https://raw.githubusercontent.com/hsiaoyi0504/Assembly_Metrics_Toolkit/master/example/example_scaffolds_only.json', function(error, json) {
+        d3.json('https://raw.githubusercontent.com/NAL-i5K/Assembly_Metrics_Toolkit/773fdd5d194c4b4ed0e1d3a26051455dbe03c0f3/example/example_scaffolds_only.json', function(error, json) {
           if (error) return console.warn(error);
           plotAssemblyTable(json);
           var hasScaffolds = json.hasOwnProperty('Number of scaffolds');
