@@ -2,12 +2,17 @@
 
 Visualization based on the calculation result of [Assembly Metrics Toolkit](https://github.com/NAL-i5K/Assembly_Metrics_Toolkit).
 
+## Installation
+
+`npm install`
+
+## Start HTTP server
+
+`npm run start`
+
 ## Beautify code base
 
-``` shell
-npm install  # you only need to run this once
-npm run format
-```
+`npm run format`
 
 ## Acknowledgement
 
