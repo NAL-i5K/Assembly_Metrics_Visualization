@@ -1,26 +1,29 @@
 <html>
-  <head>
-      <title>Assembly Metrics Visualization</title>
-    </head>
-    <body>
-      <link rel="stylesheet" type="text/css" href="css/assembly-circle.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-      <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-      <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-      <script type="text/javascript" src="js/assembly-circle.js"></script>
-      <script type="text/javascript" src="js/assembly-table.js"></script>
-      <div id="assembly-table"></div><br>
-      <div id="assembly-circle"></div>
-      <script type="text/javascript">
+
+<head>
+    <title>Assembly Metrics Visualization</title>
+</head>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="css/assembly-circle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script type="text/javascript" src="js/assembly-circle.js"></script>
+    <script type="text/javascript" src="js/assembly-table.js"></script>
+    <div id="assembly-table"></div><br>
+    <div id="assembly-circle"></div>
+    <script type="text/javascript">
         d3.json('https://raw.githubusercontent.com/NAL-i5K/Assembly_Metrics_Toolkit/8b0bf4269f00e3c3202ff1e7ab1592c445907cde/example/example_scaffolds_and_contigs.json', function(error, json) {
-          if (error) return console.warn(error);
-          plotAssemblyTable(json);
-          var hasScaffolds = json.hasOwnProperty('Number of scaffolds');
-          if (hasScaffolds){
-            asm = new Assembly (json);
-            asm.drawPlot('assembly-circle');
-          }
+            if (error) return console.warn(error);
+            plotAssemblyTable(json);
+            var hasScaffolds = json.hasOwnProperty('Number of scaffolds');
+            if (hasScaffolds) {
+                asm = new Assembly(json);
+                asm.drawPlot('assembly-circle');
+            }
         });
-      </script>
-    </body>
-  </html>
+    </script>
+</body>
+
+</html>
