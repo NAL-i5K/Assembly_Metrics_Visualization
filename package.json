@@ -4,7 +4,10 @@
   "description": "Visualization based on the calculation result of [Assembly Metrics Toolkit](https://github.com/NAL-i5K/Assembly_Metrics_Toolkit).",
   "main": "index.html",
   "scripts": {
-    "format": "js-beautify -r index.html scaffolds_and_contigs.html scaffolds_only.html js/assembly-table.js js/assembly-circle.js css/assembly-circle.css"
+    "format": "npm run format-js && npm run format-css && npm run format-html",
+    "format-js": "js-beautify -r js/assembly-table.js js/assembly-circle.js",
+    "format-css": "css-beautify -r css/assembly-circle.css",
+    "format-html": "html-beautify -r index.html scaffolds_and_contigs.html scaffolds_only.html"
   },
   "repository": {
     "type": "git",
